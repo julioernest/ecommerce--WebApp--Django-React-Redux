@@ -17,10 +17,10 @@ function Header() {
     }
     return (
         <header>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="light" variant="light">
                 <Container>
                     <LinkContainer to='/'>
-                        <Navbar.Brand>ErnestShop</Navbar.Brand>
+                        <Navbar.Brand><h1 class="ernestShop" >ErnestShop</h1></Navbar.Brand>
                      </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

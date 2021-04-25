@@ -11,7 +11,7 @@ import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
 function ProductScreen({match, history}) {
     const [qty, setQty] = useState(1)
     const [rating, setRating] = useState(0)
-    const [comment, setComment] = useState('1')
+    const [comment, setComment] = useState('')
 
 
     const dispatch = useDispatch()
@@ -66,7 +66,7 @@ function ProductScreen({match, history}) {
                                         </ListGroup.Item>
 
                                         <ListGroup.Item>
-                                            <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#FF9529'} />
+                                            <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#dc143c'} />
                                         </ListGroup.Item>
 
                                         <ListGroup.Item>
@@ -145,7 +145,7 @@ function ProductScreen({match, history}) {
                                         {product.reviews.map(( review) => (
                                             <ListGroup.Item key = {review._id}>
                                                 <strong> { review.name }</strong>
-                                                <Rating value = { review.rating } color='#f8e825'></Rating>
+                                                <Rating value = { review.rating } color='#dc143c'></Rating>
                                                 <p>{ review.createdAt.substring(0, 10) }</p>
                                                 <p>{ review.comment }</p>
                                             </ListGroup.Item>
@@ -161,7 +161,7 @@ function ProductScreen({match, history}) {
                                             { userInfo ? (
                                                 <Form onSubmit = { submitHandler}>
                                                     <Form.Group controlId = 'rating'>
-                                                        <Form.Label>Rating</Form.Label>
+                                                        <Form.Label>Rating:</Form.Label>
                                                         <Form.Control
                                                             as = 'select'
                                                             value = {rating}
@@ -178,7 +178,7 @@ function ProductScreen({match, history}) {
                                                     </Form.Group>
 
                                                     <Form.Group controlId = 'comment'>
-                                                        <Form.Label>Comment</Form.Label>
+                                                        <Form.Label>Comment:</Form.Label>
                                                         <Form.Control
                                                             as = 'textarea'
                                                             row = '5'
